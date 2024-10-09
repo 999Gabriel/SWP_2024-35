@@ -31,13 +31,17 @@ public class LoginController
 
     // Methode, die beim Klick auf den Login-Button ausgeführt wird
     @FXML
-    protected void onLoginButtonClick() {
+    protected void onLoginButtonClick()
+    {
         String email = emailField.getText();
         String password = passwordField.getText();
 
-        if (checkLogin(email, password)) {
+        if (checkLogin(email, password))
+        {
             messageLabel.setText("Eingeloggt");
-        } else {
+        }
+        else
+        {
             messageLabel.setText("Falsches Passwort oder Email, nochmal versuchen");
         }
     }
@@ -54,7 +58,6 @@ public class LoginController
             stmt.setString(1, email);
             stmt.setString(2, password);
 
-            // Führe die Abfrage aus
             ResultSet rs = stmt.executeQuery();
 
             // Wenn ein Ergebnis zurückkommt, sind die Anmeldedaten korrekt
